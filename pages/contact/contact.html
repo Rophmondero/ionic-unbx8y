@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-content padding>
+  <h2>Ideal Weight Calculator</h2>
+  <p>
+  <ion-item>
+  <ion-label color="dark">Feet:</ion-label>
+  <ion-input type="number"  [(ngModel)]="feet"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label color="dark"> Inches: </ion-label>
+  <ion-input type="number" [(ngModel)]="inches"></ion-input>
+</ion-item>
+
+  <ion-item>
+    <ion-label color="dark"> Gender: </ion-label>
+    <ion-select interface="popover" [(ngModel)]="gender">
+      <ion-option value="m">Male</ion-option>
+      <ion-option value="f">Female</ion-option>
+    </ion-select>
+</ion-item>
+
+<button ion-button color="secondary"  (click)="calculateidealWeight()">
+  CALCULATE
+  </button>
+    
+  <ion-item *ngIf="calculateidealWeight">
+    <h3>Miller Formula (1983):  <code>{{miller}}</code></h3>
+  </ion-item>
+  <ion-item *ngIf="calculateidealWeight">
+    <h3>Robinson Formula (1983):  <code>{{robinson}}</code></h3>
+  </ion-item>
+  <ion-item *ngIf="calculateidealWeight">
+    <h3>Devine Formula (1974):  <code>{{devine}}</code></h3>
+  </ion-item>
+  <ion-item *ngIf="calculateidealWeight">
+    <h3>Hamwi Formula (1963):  <code>{{hamwi}}</code></h3>
+  </ion-item>
+  
+</ion-content>
